@@ -8,7 +8,9 @@ services:
     environment:
       MONGO_INITDB_ROOT_USERNAME: shery
       MONGO_INITDB_ROOT_PASSWORD: qwerty
-
+    volumes:
+      - C:\Users\rupes\OneDrive\Desktop\DevOps\test:/data/db
+  
   mongo-express:
     image: mongo-express
     ports:
