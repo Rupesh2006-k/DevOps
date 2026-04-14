@@ -3,7 +3,7 @@ import mongoose from 'mongoose'
 const connectDB = async () => {
   try {
     const conn = await mongoose.connect(
-      'mongodb://admin:qwerty@localhost:27017/apnacollage-db?authSource=admin'
+      'mongodb://shery:qwerty@localhost:27017/dockerday1?authSource=admin'
     )
 
     console.log(`✅ MongoDB Connected: ${conn.connection.host}`)
