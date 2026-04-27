@@ -1,0 +1,28 @@
+apiVersion: apps/v1 # Kubernetes API version (Deployment ke liye)
+
+kind: Deployment # Resource type (Deployment create karega)
+
+metadata:
+  name: my-node-app # Deployment ka naam
+
+spec:
+  replicas: 3 # 2 pods run honge (scaling)
+
+  selector:
+    matchLabels:
+      app: node-app # Ye label pods ko match karega
+
+  template:
+    metadata:
+      labels:
+        app: node-app # Pod ke labels (selector se match hone chahiye)
+
+    spec:
+      containers:
+        - name: node-app # Container ka naam
+
+          image: rupeshcodes/express-app:02
+          # ⚠️ Yaha apni Docker image ka naam + tag likhna hai
+
+          ports:
+            - containerPort: 3000 # Container ke andar app kis port pe chalega    

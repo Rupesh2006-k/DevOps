@@ -1,0 +1,17 @@
+apiVersion: v1 # Service ke liye API version
+
+kind: Service # Resource type (Service)
+
+metadata:
+  name: my-node-service # Service ka naam
+
+spec:
+  type: LoadBalancer # External access ke liye (local testing me useful)
+
+  selector:
+    app: node-app # Ye deployment ke pods ko target karega (label match)
+
+  ports:
+    - name: http
+      port: 80 # Service ka port (browser se access)
+      targetPort: 3000 # Container ka port (Express app port)
