@@ -1,17 +1,11 @@
-class Test {
-  a = 12
-  constructor () {
-    this.b = 8
-    this.c = 8
-    console.log(this)
-  }
+let obj = {
+  name: 'rupesh',
+  age: 12
 }
-let val = new Test()
-console.log('====================================')
-console.log(val)
-console.log('====================================')
 
-let fu = () => {
-  console.log(this)
+function check (a, b, c) {
+  console.log(this, a, b, c)
 }
-fu()
+
+let a = check.bind(obj, 1, 2, 3)
+a()
